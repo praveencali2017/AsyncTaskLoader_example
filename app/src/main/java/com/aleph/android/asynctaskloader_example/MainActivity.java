@@ -4,7 +4,12 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.util.Log;
 
+import com.aleph.android.asynctaskloader_example.NetworkUtils.NetworkUtils;
+
+import java.io.IOException;
+import java.net.URL;
 import java.util.ArrayList;
 
 public class MainActivity extends AppCompatActivity {
@@ -37,8 +42,31 @@ public class MainActivity extends AppCompatActivity {
         mWeatherList.setHasFixedSize(true);
         mWeatherList.setAdapter(mAdapter);
 
+        URL url = NetworkUtils.urlBuilder("37.8267", "-122.4233");
 
+        Log.d("response", url.toString());
 
-
+        try {
+            String response = NetworkUtils.getResponseFromHttpUrl(url);
+            Log.d("response", response);
+        } catch (Exception e) {
+            e.printStackTrace();
+            Log.d("response", "no response");
+        }
     }
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
