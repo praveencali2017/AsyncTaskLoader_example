@@ -7,14 +7,5 @@ package com.aleph.android.asynctaskloader_example.NetworkUtils;
 public final class DarkSkyAPIClient {
 
 
-    public static final class Location {
-
-
-
-
-
-
-
-    }
 
 }

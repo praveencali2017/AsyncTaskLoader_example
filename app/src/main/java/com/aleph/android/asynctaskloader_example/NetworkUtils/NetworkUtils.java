@@ -1,6 +1,7 @@
 package com.aleph.android.asynctaskloader_example.NetworkUtils;
 
 import android.net.Uri;
+import android.util.Log;
 
 import java.io.IOException;
 import java.io.InputStream;
@@ -45,9 +46,10 @@ public final class NetworkUtils {
 
         HttpURLConnection urlConnection = (HttpURLConnection) url.openConnection();
 
+        Log.d("response", "trying to pull input stream");
+
         try {
             InputStream in = urlConnection.getInputStream();
-
             Scanner scanner = new Scanner(in);
             scanner.useDelimiter("\\A");
 

@@ -31,7 +31,6 @@ public class MainActivity extends AppCompatActivity {
         data.add(new RandomData("Hailing", "-9C"));
         data.add(new RandomData("Foggy", "0C"));
 
-
         mAdapter = new RecyclerViewAdapter(data);
 
         mWeatherList = (RecyclerView) findViewById(R.id.weather_recycler_view);
